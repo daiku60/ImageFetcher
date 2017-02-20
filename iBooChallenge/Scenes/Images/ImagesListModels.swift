@@ -28,22 +28,22 @@ struct ImagesList {
         enum Presentable {
             case success(ViewModel)
             case error(ErrorViewModel)
-        }
-        
-        struct ViewModel {
-            let images: [Image]
             
-            struct Image {
-                let identity: String
-                let imageURL: String
-                let title: String
-                let isFavourite: Bool
+            struct ViewModel {
+                let images: [Image]
+                
+                struct Image {
+                    let identity: String
+                    let imageURL: String
+                    let title: String
+                    let isFavourite: Bool
+                }
             }
-        }
-        
-        struct ErrorViewModel {
-            let errorTitle: String
-            let errorMessage: String
+            
+            struct ErrorViewModel {
+                let errorTitle: String
+                let errorMessage: String
+            }
         }
     }
 }

@@ -20,7 +20,7 @@ protocol ImagesListPresenterOutput: class {
 }
 
 protocol ImagesListParser {
-    func parseIntoViewModel(_ json: [String: Any]) -> ImagesList.Search.ViewModel
+    func parseIntoViewModel(_ json: [String: Any]) -> ImagesList.Search.Presentable.ViewModel
 }
 
 class ImagesListPresenter: ImagesListPresenterInput {
@@ -33,8 +33,8 @@ class ImagesListPresenter: ImagesListPresenterInput {
         switch response.taskResult {
         case .success(let json):
             //Fortmat the response into viewModel
-            guard let viewModel = ImagesList.Search.ViewModel(fromJSON: json) else {
-                let error = ImagesList.Search.ErrorViewModel(
+            guard let viewModel = ImagesList.Search.Presentable.ViewModel(fromJSON: json) else {
+                let error = ImagesList.Search.Presentable.ErrorViewModel(
                     errorTitle: "Error",
                     errorMessage: "error parsing response"
                 )
@@ -45,20 +45,20 @@ class ImagesListPresenter: ImagesListPresenterInput {
             
         case .failure(let error):
             // Format the error
-            let errorVM = ImagesList.Search.ErrorViewModel(errorTitle: "Error", errorMessage: error.localizedDescription)
+            let errorVM = ImagesList.Search.Presentable.ErrorViewModel(errorTitle: "Error", errorMessage: error.localizedDescription)
             output.display(.error(errorVM))
         }
         
     }
 }
 
-extension ImagesList.Search.ViewModel {
+extension ImagesList.Search.Presentable.ViewModel {
     init?(fromJSON json: [String : Any]) {
         guard let images = json["images"] as? [[String : Any]] else {
             return nil
         }
         
-        self.images = images.flatMap { (imageDict) -> ImagesList.Search.ViewModel.Image? in
+        self.images = images.flatMap { (imageDict) -> ImagesList.Search.Presentable.ViewModel.Image? in
             guard let identity = imageDict["id"] as? String,
                   let displaySizes = imageDict["display_sizes"] as? [String:Any],
                   let uri = displaySizes["uri"] as? String,
@@ -66,7 +66,7 @@ extension ImagesList.Search.ViewModel {
                     return nil
             }
             
-            return ImagesList.Search.ViewModel.Image(identity: identity, imageURL: uri, title: title, isFavourite: false)
+            return ImagesList.Search.Presentable.ViewModel.Image(identity: identity, imageURL: uri, title: title, isFavourite: false)
         }
     }
 }
