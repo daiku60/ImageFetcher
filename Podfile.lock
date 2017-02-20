@@ -1,0 +1,12 @@
+PODS:
+  - BNRDeferred (3.0.0)
+
+DEPENDENCIES:
+  - BNRDeferred (~> 3.0)
+
+SPEC CHECKSUMS:
+  BNRDeferred: 0757b256613622d3f3db21bd126ba63031ca3deb
+
+PODFILE CHECKSUM: eb373084d137facd69a7a66de41ab4a8baecd268
+
+COCOAPODS: 1.2.0
