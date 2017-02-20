@@ -1,0 +1,47 @@
+{
+    "result_count": 459449,
+    "images": [
+               {
+               "id": "634168108",
+               "asset_family": "editorial",
+               "caption": "BARCELONA, SPAIN - FEBRUARY 07: Lionel Messi (C) of FC Barcelona runs with the ball between Filipe Luis (L), Nicolas Gaitan (2nd L) and Diego Godin (R) of Atletico de Madrid during the Copa del Rey semi-final second leg match between FC Barcelona and Atletico de Madrid at Camp Nou on February 7, 2017 in Barcelona, Spain. (Photo by Alex Caparros/Getty Images)",
+               "collection_code": "SPO",
+               "collection_id": 57,
+               "collection_name": "Getty Images Sport",
+               "display_sizes": [
+                                 {
+                                 "is_watermarked": false,
+                                 "name": "thumb",
+                                 "uri": "http://cache2.asset-cache.net/xt/634168108.jpg?v=1&g=fs2|0|editorial469|68|108&s=1&b=Ng=="
+                                 }
+                                 ],
+               "license_model": "rightsmanaged",
+               "max_dimensions": {
+               "height": 2224,
+               "width": 3334
+               },
+               "title": "FC Barcelona v Atletico Madrid - Copa Del Rey Semi-final: Second Leg"
+               },
+               {
+               "id": "634168390",
+               "asset_family": "editorial",
+               "caption": "BARCELONA, SPAIN - FEBRUARY 07:  Players of FC Barcelona celebrate after their teammate Luis Suarez scored the opening goal during the Copa del Rey semi-final second leg match between FC Barcelona and Atletico de Madrid at Camp Nou on February 7, 2017 in Barcelona, Spain.  (Photo by Alex Caparros/Getty Images)",
+               "collection_code": "SPO",
+               "collection_id": 57,
+               "collection_name": "Getty Images Sport",
+               "display_sizes": [
+                                 {
+                                 "is_watermarked": false,
+                                 "name": "thumb",
+                                 "uri": "http://cache1.asset-cache.net/xt/634168390.jpg?v=1&g=fs2|0|editorial469|68|390&s=1&b=Ng=="
+                                 }
+                                 ],
+               "license_model": "rightsmanaged",
+               "max_dimensions": {
+               "height": 3503,
+               "width": 5254
+               },
+               "title": "FC Barcelona v Atletico Madrid - Copa Del Rey Semi-final: Second Leg"
+               }
+               ]
+}

@@ -23,7 +23,11 @@ enum GettyCall: String {
     case search = "search/images"
 }
 
-class GettyFetcher {
+protocol ImagesListFetcher {
+    func fetchImages(withSearchTerm: String, page: Int, pageSize: Int) -> Task<[String: Any]>
+}
+
+class GettyFetcher: ImagesListFetcher {
     
     private var apiKey = "bejfn9r4rj22dmzsntvbzxc9"
     private var baseURL = "https://api.gettyimages.com/v3/"
@@ -63,6 +67,10 @@ class GettyFetcher {
         
         return Task(future: Future(deferred))
     }
+    
+    func fetchImages(withSearchTerm term: String, page: Int = 0, pageSize: Int = 20) -> Task<[String: Any]> {
+        return retrieveGetty(withAPICall: .search, params: ["phrase": term, "page": page, "page_size": pageSize])
+    }
 }
 
 extension String {
@@ -80,7 +88,15 @@ extension Dictionary {
     func stringFromHttpParameters() -> String {
         let parameterArray = self.map { (key, value) -> String in
             let percentEscapedKey = (key as! String).addingPercentEncodingForURLQueryValue()!
-            let percentEscapedValue = (value as! String).addingPercentEncodingForURLQueryValue()!
+            let percentEscapedValue: String = {
+                if let valueStr = value as? String {
+                    return valueStr.addingPercentEncodingForURLQueryValue()!
+                } else if let valueInt = value as? Int {
+                    return "\(valueInt)".addingPercentEncodingForURLQueryValue()!
+                } else {
+                    fatalError()
+                }
+            }()
             return "\(percentEscapedKey)=\(percentEscapedValue)"
         }
         

@@ -21,18 +21,16 @@ protocol ImagesListInteractorOutput {
 
 class ImagesListInteractor: ImagesListInteractorInput {
     var output: ImagesListInteractorOutput!
+    var fetcher: ImagesListFetcher
+    
+    init(withFetcher fetcher: ImagesListFetcher) {
+        self.fetcher = fetcher
+    }
     
     // MARK: - Business logic
     
     func searchImages(request: ImagesList.Search.Request) {
-        
-        let params: [String: Any] = [
-            "phrase": request.searchTerm,
-            "page": request.currentPage,
-            "page_size": request.numberOfItems
-        ]
-        
-        let searchTask = GettyFetcher.instance.retrieveGetty(withAPICall: .search, params: params)
+        let searchTask = fetcher.fetchImages(withSearchTerm: request.searchTerm, page: request.currentPage, pageSize: request.numberOfItems)
         
         searchTask.upon(DispatchQueue.main) { (result) in
             let response = ImagesList.Search.Response(taskResult: result)
