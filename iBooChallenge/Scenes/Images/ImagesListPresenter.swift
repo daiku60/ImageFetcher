@@ -16,8 +16,11 @@ protocol ImagesListPresenterInput {
 }
 
 protocol ImagesListPresenterOutput: class {
-    func displayImages(viewModel: ImagesList.Search.ViewModel)
-    func displayError(_ viewModel: ImagesList.Search.ErrorViewModel)
+    func display(_ presentable: ImagesList.Search.Presentable)
+}
+
+protocol ImagesListParser {
+    func parseIntoViewModel(_ json: [String: Any]) -> ImagesList.Search.ViewModel
 }
 
 class ImagesListPresenter: ImagesListPresenterInput {
@@ -35,16 +38,15 @@ class ImagesListPresenter: ImagesListPresenterInput {
                     errorTitle: "Error",
                     errorMessage: "error parsing response"
                 )
-                output.displayError(error)
+                output.display(.error(error))
                 return
             }
-            output.displayImages(viewModel: viewModel)
+            output.display(.success(viewModel))
             
         case .failure(let error):
             // Format the error
-            let viewModel = ImagesList.Search.ErrorViewModel(errorTitle: "Error", errorMessage: error.localizedDescription)
-            output.displayError(viewModel)
-            
+            let errorVM = ImagesList.Search.ErrorViewModel(errorTitle: "Error", errorMessage: error.localizedDescription)
+            output.display(.error(errorVM))
         }
         
     }

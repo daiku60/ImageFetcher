@@ -23,15 +23,10 @@ class ImagesListPresenterTests: XCTestCase {
     }
     
     class ImagesListPresenterOutputSpy: ImagesListPresenterOutput {
-        var displayImagesCalled = false
-        var displayErrorCalled = false
+        var displayCalled = false
         
-        func displayImages(viewModel: ImagesList.Search.ViewModel) {
-            displayImagesCalled = true
-        }
-        
-        func displayError(_ viewModel: ImagesList.Search.ErrorViewModel) {
-            displayErrorCalled = true
+        func display(_ presentable: ImagesList.Search.Presentable) {
+            displayCalled = true
         }
     }
     
@@ -49,8 +44,7 @@ class ImagesListPresenterTests: XCTestCase {
         presenter.presentSearch(response: response)
         
         // Then
-        XCTAssert(!spy.displayImagesCalled, "Display images called should be called!")
-        XCTAssert(spy.displayErrorCalled, "Display errpr called should be called!")
+        XCTAssert(spy.displayCalled, "Display should be called!")
     }
     
     func testPresenterShouldParseJSONFromInteractor() {
@@ -73,7 +67,7 @@ class ImagesListPresenterTests: XCTestCase {
         presenter.presentSearch(response: response)
         
         // Then
-        XCTAssert(spy.displayImagesCalled, "Display images called should be called!")
+        XCTAssert(spy.displayCalled, "Display should be called!")
     }
     
 }

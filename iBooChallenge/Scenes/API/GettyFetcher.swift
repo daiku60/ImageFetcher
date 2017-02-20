@@ -32,10 +32,6 @@ class GettyFetcher: ImagesListFetcher {
     private var apiKey = "bejfn9r4rj22dmzsntvbzxc9"
     private var baseURL = "https://api.gettyimages.com/v3/"
     
-    static let instance = GettyFetcher()
-    
-    private init() {}
-    
     public func retrieveGetty(withAPICall call: GettyCall, params: [String: Any] = [:]) -> Task<[String: Any]> {
         
         let deferred = Deferred<TaskResult<[String: Any]>>()

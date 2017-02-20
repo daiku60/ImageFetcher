@@ -41,7 +41,7 @@ class ImagesListConfigurator {
         let presenter = ImagesListPresenter()
         presenter.output = viewController
         
-        let interactor = ImagesListInteractor(withFetcher: GettyFetcher.instance)
+        let interactor = ImagesListInteractor(withFetcher: GettyFetcher())
         interactor.output = presenter
         
         viewController.output = interactor

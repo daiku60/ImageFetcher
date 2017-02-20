@@ -74,7 +74,7 @@ class ImagesListInteractorTests: XCTestCase {
         let exp = expectation(description: "Calls fetcher and waits result to be forwarded to the presenter")
         
         //Given
-        let fetcher = GettyFetcher.instance
+        let fetcher = GettyFetcher()
         let interactor = ImagesListInteractor(withFetcher: fetcher)
         let spyOutput = ImagesListInteractorSpyOutput()
         interactor.output = spyOutput

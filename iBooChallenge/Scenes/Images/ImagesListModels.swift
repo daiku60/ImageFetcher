@@ -25,6 +25,11 @@ struct ImagesList {
             let taskResult: TaskResult<[String: Any]>
         }
         
+        enum Presentable {
+            case success(ViewModel)
+            case error(ErrorViewModel)
+        }
+        
         struct ViewModel {
             let images: [Image]
             

@@ -12,8 +12,7 @@
 import UIKit
 
 protocol ImagesListViewControllerInput {
-    func displayImages(viewModel: ImagesList.Search.ViewModel)
-    func displayError(_ viewModel: ImagesList.Search.ErrorViewModel)
+    func display(_ presentable: ImagesList.Search.Presentable)
 }
 
 protocol ImagesListViewControllerOutput {
@@ -49,13 +48,9 @@ class ImagesListViewController: UIViewController, ImagesListViewControllerInput 
     
     // MARK: - Display logic
     
-    func displayImages(viewModel: ImagesList.Search.ViewModel) {
+    func display(_ presentable: ImagesList.Search.Presentable) {
         // NOTE: Display the result from the Presenter
         
         // nameTextField.text = viewModel.name
-    }
-    
-    func displayError(_ viewModel: ImagesList.Search.ErrorViewModel) {
-        
     }
 }
