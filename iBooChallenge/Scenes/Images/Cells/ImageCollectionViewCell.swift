@@ -67,9 +67,9 @@ class ImageCollectionViewCell: UICollectionViewCell {
         
         titleLabel.text = image.title
         
-        guard let urlStr = image.imageURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+        guard let url = URL(string: image.imageURL) else { return }
         imageView.sd_setImage(
-            with: URL(string: urlStr)!,
+            with: url,
             placeholderImage: #imageLiteral(resourceName: "placeholder"))
         
     }

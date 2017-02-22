@@ -72,7 +72,11 @@ class GettyFetcher: ImagesListFetcher {
     }
     
     func fetchImages(withSearchTerm term: String, page: Int = 0, pageSize: Int = 20) -> Task<[String: Any]> {
-        return retrieveGetty(withAPICall: .search, params: ["phrase": term, "page": page, "page_size": pageSize])
+        return retrieveGetty(withAPICall: .search, params: [
+            "phrase": term,
+            "fields": "display_set,title",
+            "page": page,
+            "page_size": pageSize])
     }
 }
 

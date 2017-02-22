@@ -17,7 +17,7 @@ struct ImagesList {
         
         struct Request {
             let searchTerm: String
-            let currentPage: Int = 1
+            let currentPage: Int
             let numberOfItems: Int = 20
         }
         
@@ -30,7 +30,7 @@ struct ImagesList {
             case error(ErrorViewModel)
             
             struct ViewModel {
-                let images: [Image]
+                var images: [Image]
                 
                 struct Image {
                     let identity: String

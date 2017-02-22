@@ -22,13 +22,15 @@ protocol ImagesListViewControllerOutput {
 class ImagesListViewController: UIViewController, ImagesListViewControllerInput {
     
     enum Constants {
-        static let ImageCollectionViewCell: String = "ImageCollectionViewCell"
+        static let ImageCollectionViewCellIdentifier: String = "ImageCollectionViewCellIdentifier"
+        static let SpinnerCellIdentifer: String = "SpinnerCellIdentifier"
     }
     
     var output: ImagesListViewControllerOutput!
     var router: ImagesListRouter!
     
     var viewModel: ImagesList.Search.Presentable.ViewModel?
+    var currentPage: Int = 1
     
     // MARK: - UI Elements
     
@@ -66,7 +68,10 @@ class ImagesListViewController: UIViewController, ImagesListViewControllerInput 
         
         collectionView.register(
             ImageCollectionViewCell.self,
-            forCellWithReuseIdentifier: Constants.ImageCollectionViewCell)
+            forCellWithReuseIdentifier: Constants.ImageCollectionViewCellIdentifier)
+        collectionView.register(
+            SpinnerCell.self,
+            forCellWithReuseIdentifier: Constants.SpinnerCellIdentifer)
         
         searchImagesOnLoad()
     }
@@ -98,7 +103,10 @@ class ImagesListViewController: UIViewController, ImagesListViewControllerInput 
     
     func searchImagesOnLoad() {
         // NOTE: Ask the Interactor to do some work
-        let request = ImagesList.Search.Request(searchTerm: "Barcelona")
+        let request = ImagesList.Search.Request(
+            searchTerm: "Barcelona",
+            currentPage: currentPage
+        )
         
         spinner.isHidden = false
         output.searchImages(request: request)
@@ -112,8 +120,16 @@ class ImagesListViewController: UIViewController, ImagesListViewControllerInput 
         
         switch presentable {
         case .success(let viewModel):
-            self.viewModel = viewModel
-            collectionView.reloadData()
+            if var currentVM = self.viewModel {
+                currentVM.images = currentVM.images + viewModel.images
+                self.viewModel = currentVM
+                collectionView.performBatchUpdates({
+                    self.collectionView.reloadSections([0])
+                }, completion: nil)
+            } else {
+                self.viewModel = viewModel
+                collectionView.reloadData()
+            }
         case .error(let error):
             displayError(error)
         }
@@ -122,31 +138,59 @@ class ImagesListViewController: UIViewController, ImagesListViewControllerInput 
     func displayError(_ error: ImagesList.Search.Presentable.ErrorViewModel) {
         // TODO: Display error
     }
+    
+    func isLastCell(_ indexPath: IndexPath) -> Bool {
+        guard let viewModel = viewModel else { return false  }
+        return indexPath.item == viewModel.images.count
+    }
 }
 
 extension ImagesListViewController: UICollectionViewDataSource {
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel?.images.count ?? 0
+        guard let count = viewModel?.images.count else { return 0 }
+        return count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.ImageCollectionViewCell, for: indexPath) as! ImageCollectionViewCell
         
         guard let viewModel = viewModel else { fatalError() }
-        
-        cell.configure(for: viewModel.images[indexPath.item])
-        
-        return cell
+        if !isLastCell(indexPath) {
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: Constants.ImageCollectionViewCellIdentifier,
+                for: indexPath
+            ) as! ImageCollectionViewCell
+            
+            cell.configure(for: viewModel.images[indexPath.item])
+            return cell
+            
+        } else {
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: Constants.SpinnerCellIdentifer,
+                for: indexPath
+            ) as! SpinnerCell
+            
+            return cell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if isLastCell(indexPath) {
+            currentPage += 1
+            searchImagesOnLoad()
+        }
     }
 }
 
 extension ImagesListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //TODO: Change me
-        return CGSize(width: collectionView.frame.size.width, height: 300)
+        if isLastCell(indexPath) {
+            return CGSize(width: self.view.frame.size.width, height: 100)
+        }
+        return CGSize(width: self.view.frame.size.width, height: 200)
     }
 }
