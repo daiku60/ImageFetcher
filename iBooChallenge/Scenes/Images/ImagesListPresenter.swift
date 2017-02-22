@@ -60,13 +60,17 @@ extension ImagesList.Search.Presentable.ViewModel {
         
         self.images = images.flatMap { (imageDict) -> ImagesList.Search.Presentable.ViewModel.Image? in
             guard let identity = imageDict["id"] as? String,
-                  let displaySizes = imageDict["display_sizes"] as? [String:Any],
-                  let uri = displaySizes["uri"] as? String,
-                  let title = imageDict["title"] as? String else {
+                let displaySizes = imageDict["display_sizes"] as? [[String:Any]], displaySizes.count > 0, let uri = displaySizes[0]["uri"] as? String,
+                let title = imageDict["title"] as? String
+                    else {
                     return nil
             }
             
-            return ImagesList.Search.Presentable.ViewModel.Image(identity: identity, imageURL: uri, title: title, isFavourite: false)
+            return ImagesList.Search.Presentable.ViewModel.Image(
+                identity: identity,
+                imageURL: uri,
+                title: title,
+                isFavourite: false)
         }
     }
 }

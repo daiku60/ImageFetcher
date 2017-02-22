@@ -29,7 +29,14 @@ protocol ImagesListFetcher {
 
 class GettyFetcher: ImagesListFetcher {
     
-    private var apiKey = "bejfn9r4rj22dmzsntvbzxc9"
+    private var apiKey: String {
+        guard let path = Bundle.main.path(forResource: "apikey", ofType: "plist"),
+            let dict = NSDictionary(contentsOfFile: path) as? [String: AnyObject] else {
+            fatalError()
+        }
+        return dict["ApiKey"] as! String
+    }
+    
     private var baseURL = "https://api.gettyimages.com/v3/"
     
     public func retrieveGetty(withAPICall call: GettyCall, params: [String: Any] = [:]) -> Task<[String: Any]> {

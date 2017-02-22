@@ -32,6 +32,8 @@
 		678B711F1E591D7400BC263D /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678B71181E591D7400BC263D /* ImageDetailViewController.swift */; };
 		678B71201E591D7400BC263D /* ImageDetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678B71191E591D7400BC263D /* ImageDetailWorker.swift */; };
 		678B71231E59208100BC263D /* GettyFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678B71221E59208100BC263D /* GettyFetcher.swift */; };
+		67E57D971E5CE66800BB7A10 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E57D961E5CE66800BB7A10 /* ImageCollectionViewCell.swift */; };
+		67E57D991E5E3D3E00BB7A10 /* apikey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67E57D981E5E3D3E00BB7A10 /* apikey.plist */; };
 		7CB94438DF6ED68B479F52D5 /* Pods_iBooChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252B3341358A533BC20B938B /* Pods_iBooChallengeTests.framework */; };
 		D16AD82AD246128630DDBBC1 /* Pods_iBooChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FBA3DD256C8A12687C0005C /* Pods_iBooChallengeUITests.framework */; };
 /* End PBXBuildFile section */
@@ -86,6 +88,8 @@
 		678B71181E591D7400BC263D /* ImageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageDetailViewController.swift; path = Scenes/Detail/ImageDetailViewController.swift; sourceTree = "<group>"; };
 		678B71191E591D7400BC263D /* ImageDetailWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageDetailWorker.swift; path = Scenes/Detail/ImageDetailWorker.swift; sourceTree = "<group>"; };
 		678B71221E59208100BC263D /* GettyFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GettyFetcher.swift; path = Scenes/API/GettyFetcher.swift; sourceTree = "<group>"; };
+		67E57D961E5CE66800BB7A10 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageCollectionViewCell.swift; path = Scenes/Images/ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		67E57D981E5E3D3E00BB7A10 /* apikey.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = apikey.plist; sourceTree = "<group>"; };
 		684E1AA51D4623B94ED1E197 /* Pods-iBooChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBooChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-iBooChallenge/Pods-iBooChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		B6EBCDADD3E75EAF16423D12 /* Pods-iBooChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBooChallengeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iBooChallengeTests/Pods-iBooChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B835AD7B6C8F805ED16180AD /* Pods-iBooChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBooChallengeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iBooChallengeUITests/Pods-iBooChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +167,7 @@
 				678B70DB1E591ADD00BC263D /* Assets.xcassets */,
 				678B70DD1E591ADD00BC263D /* LaunchScreen.storyboard */,
 				678B70E01E591ADD00BC263D /* Info.plist */,
+				67E57D981E5E3D3E00BB7A10 /* apikey.plist */,
 			);
 			path = iBooChallenge;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 				678B71071E591D5600BC263D /* ImagesListPresenter.swift */,
 				678B71081E591D5600BC263D /* ImagesListRouter.swift */,
 				678B71091E591D5600BC263D /* ImagesListViewController.swift */,
+				67E57D961E5CE66800BB7A10 /* ImageCollectionViewCell.swift */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -378,6 +384,7 @@
 				6768BC931E5BA56900020BE9 /* imagesList.json in Resources */,
 				678B70DC1E591ADD00BC263D /* Assets.xcassets in Resources */,
 				678B70DA1E591ADD00BC263D /* Main.storyboard in Resources */,
+				67E57D991E5E3D3E00BB7A10 /* apikey.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,6 +548,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67E57D971E5CE66800BB7A10 /* ImageCollectionViewCell.swift in Sources */,
 				678B710F1E591D5600BC263D /* ImagesListRouter.swift in Sources */,
 				678B711E1E591D7400BC263D /* ImageDetailRouter.swift in Sources */,
 				678B71201E591D7400BC263D /* ImageDetailWorker.swift in Sources */,

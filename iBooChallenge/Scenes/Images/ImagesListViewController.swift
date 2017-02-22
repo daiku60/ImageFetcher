@@ -20,29 +20,87 @@ protocol ImagesListViewControllerOutput {
 }
 
 class ImagesListViewController: UIViewController, ImagesListViewControllerInput {
+    
+    enum Constants {
+        static let ImageCollectionViewCell: String = "ImageCollectionViewCell"
+    }
+    
     var output: ImagesListViewControllerOutput!
     var router: ImagesListRouter!
     
-    // MARK: - Object lifecycle
+    var viewModel: ImagesList.Search.Presentable.ViewModel?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        ImagesListConfigurator.sharedInstance.configure(viewController: self)
-    }
+    // MARK: - UI Elements
+    
+    let spinner: UIActivityIndicatorView = {
+        let spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        spinner.startAnimating()
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        return spinner
+    }()
+    
+    let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .white
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return collectionView
+    }()
     
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "iBOO Challenge"
+        
+        ImagesListConfigurator.sharedInstance.configure(viewController: self)
+        view.backgroundColor = .white
+        layoutSubviews()
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        collectionView.register(
+            ImageCollectionViewCell.self,
+            forCellWithReuseIdentifier: Constants.ImageCollectionViewCell)
+        
         searchImagesOnLoad()
+    }
+    
+    private func layoutSubviews() {
+        view.addSubview(collectionView)
+        view.addSubview(spinner)
+        
+        spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+  
+        collectionView.leadingAnchor
+            .constraint(equalTo: view.leadingAnchor)
+            .isActive = true
+        collectionView.topAnchor
+            .constraint(equalTo: view.topAnchor)
+            .isActive = true
+        collectionView.trailingAnchor
+            .constraint(equalTo: view.trailingAnchor)
+            .isActive = true
+        collectionView.bottomAnchor
+            .constraint(equalTo: view.bottomAnchor)
+            .isActive = true
+        
+        spinner.isHidden = true
     }
     
     // MARK: - Event handling
     
     func searchImagesOnLoad() {
         // NOTE: Ask the Interactor to do some work
-        
         let request = ImagesList.Search.Request(searchTerm: "Barcelona")
+        
+        spinner.isHidden = false
         output.searchImages(request: request)
     }
     
@@ -50,7 +108,45 @@ class ImagesListViewController: UIViewController, ImagesListViewControllerInput 
     
     func display(_ presentable: ImagesList.Search.Presentable) {
         // NOTE: Display the result from the Presenter
+        spinner.isHidden = true
         
-        // nameTextField.text = viewModel.name
+        switch presentable {
+        case .success(let viewModel):
+            self.viewModel = viewModel
+            collectionView.reloadData()
+        case .error(let error):
+            displayError(error)
+        }
+    }
+    
+    func displayError(_ error: ImagesList.Search.Presentable.ErrorViewModel) {
+        // TODO: Display error
+    }
+}
+
+extension ImagesListViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel?.images.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.ImageCollectionViewCell, for: indexPath) as! ImageCollectionViewCell
+        
+        guard let viewModel = viewModel else { fatalError() }
+        
+        cell.configure(for: viewModel.images[indexPath.item])
+        
+        return cell
+    }
+}
+
+extension ImagesListViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        //TODO: Change me
+        return CGSize(width: collectionView.frame.size.width, height: 300)
     }
 }

@@ -8,6 +8,9 @@ target 'iBooChallenge' do
   # Pods for iBooChallenge
   pod 'BNRDeferred', '~> 3.0'
   
+  platform :ios, '8.0'
+  pod 'SDWebImage', '~>3.8' 
+ 
 target 'iBooChallengeTests' do
     inherit! :search_paths
     # Pods for testing
