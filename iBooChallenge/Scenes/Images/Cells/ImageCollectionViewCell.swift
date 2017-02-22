@@ -9,6 +9,10 @@
 import UIKit
 import SDWebImage
 
+protocol ImageCollectionViewCellDelegate: class {
+    func switchChanged(sender: ImageCollectionViewCell, isOn: Bool)
+}
+
 class ImageCollectionViewCell: UICollectionViewCell {
     
     let rootStackView: UIStackView = {
@@ -28,11 +32,31 @@ class ImageCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
+    let titleStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.distribution = .fill
+        stackView.alignment = .center
+        stackView.spacing = 8
+        stackView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        stackView.setContentHuggingPriority(UILayoutPriorityRequired, for: .vertical)
+        stackView.setContentCompressionResistancePriority(UILayoutPriorityRequired, for: .vertical)
+        return stackView
+    }()
+    
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.setContentHuggingPriority(UILayoutPriorityRequired, for: .vertical)
+        label.numberOfLines = 0
         return label
     }()
+    
+    let favSwitch: UISwitch = {
+        let swi = UISwitch()
+        swi.setContentHuggingPriority(UILayoutPriorityRequired, for: .horizontal)
+        return swi
+    }()
+    
+    weak var delegate: ImageCollectionViewCellDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -60,7 +84,12 @@ class ImageCollectionViewCell: UICollectionViewCell {
             .isActive = true
         
         rootStackView.addArrangedSubview(imageView)
-        rootStackView.addArrangedSubview(titleLabel)
+        rootStackView.addArrangedSubview(titleStackView)
+        
+        titleStackView.addArrangedSubview(titleLabel)
+        titleStackView.addArrangedSubview(favSwitch)
+        
+        favSwitch.addTarget(self, action: #selector(switchChanged(sender:)), for: UIControlEvents.valueChanged)
     }
     
     func configure(for image: ImagesList.Search.Presentable.ViewModel.Image) {
@@ -71,6 +100,9 @@ class ImageCollectionViewCell: UICollectionViewCell {
         imageView.sd_setImage(
             with: url,
             placeholderImage: #imageLiteral(resourceName: "placeholder"))
-        
+    }
+    
+    func switchChanged(sender: UISwitch) {
+        self.delegate?.switchChanged(sender: self, isOn: sender.isOn)
     }
 }

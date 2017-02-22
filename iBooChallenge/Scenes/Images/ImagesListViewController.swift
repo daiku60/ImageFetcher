@@ -104,7 +104,7 @@ class ImagesListViewController: UIViewController, ImagesListViewControllerInput 
     func searchImagesOnLoad() {
         // NOTE: Ask the Interactor to do some work
         let request = ImagesList.Search.Request(
-            searchTerm: "Barcelona",
+            searchTerm: "Barcelona City",
             currentPage: currentPage
         )
         
@@ -166,6 +166,7 @@ extension ImagesListViewController: UICollectionViewDataSource {
             ) as! ImageCollectionViewCell
             
             cell.configure(for: viewModel.images[indexPath.item])
+            cell.delegate = self
             return cell
             
         } else {
@@ -192,5 +193,15 @@ extension ImagesListViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: self.view.frame.size.width, height: 100)
         }
         return CGSize(width: self.view.frame.size.width, height: 200)
+    }
+}
+
+extension ImagesListViewController: ImageCollectionViewCellDelegate {
+    func switchChanged(sender: ImageCollectionViewCell, isOn: Bool) {
+        guard let indexPath = collectionView.indexPath(for: sender) else { return }
+        guard var viewModel = self.viewModel else { return }
+        
+        viewModel.images[indexPath.item].isFavourite = isOn
+        self.viewModel = viewModel
     }
 }

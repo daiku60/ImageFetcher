@@ -36,7 +36,7 @@ struct ImagesList {
                     let identity: String
                     let imageURL: String
                     let title: String
-                    let isFavourite: Bool
+                    var isFavourite: Bool
                 }
             }
             
