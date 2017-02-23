@@ -73,7 +73,6 @@ class ImagesListViewController: UIViewController, ImagesListViewControllerInput 
             SpinnerCell.self,
             forCellWithReuseIdentifier: Constants.SpinnerCellIdentifer)
         
-        spinner.isHidden = false
         searchImagesOnLoad()
     }
     
@@ -81,12 +80,26 @@ class ImagesListViewController: UIViewController, ImagesListViewControllerInput 
         view.addSubview(collectionView)
         view.addSubview(spinner)
         
-        spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        addSpinner()
   
         collectionView.fillSuperview()
         
         spinner.isHidden = true
+    }
+    
+    func addSpinner() {
+        
+        DispatchQueue.main.async {
+            self.view.addSubview(self.spinner)
+            self.spinner.isHidden = false
+            self.spinner.centerXAnchor
+                .constraint(equalTo: self.view.centerXAnchor)
+                .isActive = true
+            self.spinner.centerYAnchor
+                .constraint(equalTo: self.view.centerYAnchor)
+                .isActive = true
+        }
+        
     }
     
     // MARK: - Event handling
@@ -125,7 +138,15 @@ class ImagesListViewController: UIViewController, ImagesListViewControllerInput 
     }
     
     func displayError(_ error: ImagesList.Search.Presentable.ErrorViewModel) {
-        // TODO: Display error
+        
+        let alertController = UIAlertController(title: error.errorTitle, message: error.errorMessage, preferredStyle: .actionSheet)
+        let okAction = UIAlertAction(title: "RETRY", style: UIAlertActionStyle.default) {
+            [weak self] (result : UIAlertAction) -> Void in
+            self?.addSpinner()
+            self?.searchImagesOnLoad()
+        }
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
     }
     
     func isLastCell(_ indexPath: IndexPath) -> Bool {
