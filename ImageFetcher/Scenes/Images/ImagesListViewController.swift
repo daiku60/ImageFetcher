@@ -57,7 +57,7 @@ class ImagesListViewController: UIViewController, ImagesListViewControllerInput 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "iBOO Challenge"
+        navigationItem.title = "Image Fetcher"
         
         ImagesListConfigurator.sharedInstance.configure(viewController: self)
         view.backgroundColor = .white

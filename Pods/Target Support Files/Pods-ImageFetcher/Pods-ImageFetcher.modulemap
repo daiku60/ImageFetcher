@@ -1,0 +1,6 @@
+framework module Pods_ImageFetcher {
+  umbrella header "Pods-ImageFetcher-umbrella.h"
+
+  export *
+  module * { export * }
+}

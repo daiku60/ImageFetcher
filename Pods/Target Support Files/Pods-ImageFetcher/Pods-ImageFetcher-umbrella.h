@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_iBooChallengeTestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_iBooChallengeTestsVersionString[];
+FOUNDATION_EXPORT double Pods_ImageFetcherVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_ImageFetcherVersionString[];
 

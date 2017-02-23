@@ -91,7 +91,7 @@ class ImageDetailViewController: UIViewController, ImageDetailViewControllerInpu
         backgroundImage.sd_setImage(with: url) { (_, _, _, _) in
             UIView.animate(withDuration: 0.4, animations: { [weak self] in
                 self?.backgroundImage.alpha = 1
-                self?.overlay.alpha = 0.3
+                self?.overlay.alpha = 0.5
                 self?.endChallengeTitleLabel.alpha = 1
                 self?.endChallengeLabel.alpha = 1
             })

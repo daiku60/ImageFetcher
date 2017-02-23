@@ -7,16 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B2F9C85588CD4763C637DC6 /* Pods_iBooChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC8E045F81EE4CAF39219320 /* Pods_iBooChallenge.framework */; };
+		1B2F9C85588CD4763C637DC6 /* Pods_ImageFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC8E045F81EE4CAF39219320 /* Pods_ImageFetcher.framework */; };
 		6768BC8E1E5BA32400020BE9 /* ImagesListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6768BC8D1E5BA32400020BE9 /* ImagesListPresenterTests.swift */; };
 		6768BC921E5BA54400020BE9 /* imagesList.json in Resources */ = {isa = PBXBuildFile; fileRef = 6768BC901E5BA37C00020BE9 /* imagesList.json */; };
 		6768BC931E5BA56900020BE9 /* imagesList.json in Resources */ = {isa = PBXBuildFile; fileRef = 6768BC901E5BA37C00020BE9 /* imagesList.json */; };
 		678B70D51E591ADD00BC263D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678B70D41E591ADD00BC263D /* AppDelegate.swift */; };
-		678B70D71E591ADD00BC263D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678B70D61E591ADD00BC263D /* ViewController.swift */; };
 		678B70DC1E591ADD00BC263D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 678B70DB1E591ADD00BC263D /* Assets.xcassets */; };
 		678B70DF1E591ADD00BC263D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 678B70DD1E591ADD00BC263D /* LaunchScreen.storyboard */; };
 		678B70EA1E591ADD00BC263D /* ImagesListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678B70E91E591ADD00BC263D /* ImagesListInteractorTests.swift */; };
-		678B70F51E591ADD00BC263D /* iBooChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678B70F41E591ADD00BC263D /* iBooChallengeUITests.swift */; };
+		678B70F51E591ADD00BC263D /* ImageFetcherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678B70F41E591ADD00BC263D /* ImageFetcherUITests.swift */; };
 		678B710B1E591D5600BC263D /* ImagesListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678B71041E591D5600BC263D /* ImagesListConfigurator.swift */; };
 		678B710C1E591D5600BC263D /* ImagesListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678B71051E591D5600BC263D /* ImagesListInteractor.swift */; };
 		678B710D1E591D5600BC263D /* ImagesListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678B71061E591D5600BC263D /* ImagesListModels.swift */; };
@@ -36,8 +35,8 @@
 		67E57D9C1E5E46DA00BB7A10 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E57D9B1E5E46DA00BB7A10 /* ImageCollectionViewCell.swift */; };
 		67E57D9F1E5E55CF00BB7A10 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 67E57DA11E5E55CF00BB7A10 /* Localizable.strings */; };
 		67E57DA51E5E609900BB7A10 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E57DA41E5E609900BB7A10 /* UIView+Layout.swift */; };
-		7CB94438DF6ED68B479F52D5 /* Pods_iBooChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252B3341358A533BC20B938B /* Pods_iBooChallengeTests.framework */; };
-		D16AD82AD246128630DDBBC1 /* Pods_iBooChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FBA3DD256C8A12687C0005C /* Pods_iBooChallengeUITests.framework */; };
+		7CB94438DF6ED68B479F52D5 /* Pods_ImageFetcherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252B3341358A533BC20B938B /* Pods_ImageFetcherTests.framework */; };
+		D16AD82AD246128630DDBBC1 /* Pods_ImageFetcherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FBA3DD256C8A12687C0005C /* Pods_ImageFetcherUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,34 +45,33 @@
 			containerPortal = 678B70C91E591ADD00BC263D /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 678B70D01E591ADD00BC263D;
-			remoteInfo = iBooChallenge;
+			remoteInfo = ImageFetcher;
 		};
 		678B70F11E591ADD00BC263D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 678B70C91E591ADD00BC263D /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 678B70D01E591ADD00BC263D;
-			remoteInfo = iBooChallenge;
+			remoteInfo = ImageFetcher;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		252B3341358A533BC20B938B /* Pods_iBooChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iBooChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2FBA3DD256C8A12687C0005C /* Pods_iBooChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iBooChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		33338585357F9A05E9EFA51B /* Pods-iBooChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBooChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iBooChallenge/Pods-iBooChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		252B3341358A533BC20B938B /* Pods_ImageFetcherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageFetcherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FBA3DD256C8A12687C0005C /* Pods_ImageFetcherUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageFetcherUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		33338585357F9A05E9EFA51B /* Pods-ImageFetcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageFetcher.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImageFetcher/Pods-ImageFetcher.debug.xcconfig"; sourceTree = "<group>"; };
 		6768BC8D1E5BA32400020BE9 /* ImagesListPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesListPresenterTests.swift; sourceTree = "<group>"; };
-		6768BC901E5BA37C00020BE9 /* imagesList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = imagesList.json; path = ../iBooChallengeTests/json/imagesList.json; sourceTree = "<group>"; };
-		678B70D11E591ADD00BC263D /* iBooChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBooChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6768BC901E5BA37C00020BE9 /* imagesList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = imagesList.json; path = ../ImageFetcherTests/json/imagesList.json; sourceTree = "<group>"; };
+		678B70D11E591ADD00BC263D /* ImageFetcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageFetcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		678B70D41E591ADD00BC263D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		678B70D61E591ADD00BC263D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		678B70DB1E591ADD00BC263D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		678B70DE1E591ADD00BC263D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		678B70E01E591ADD00BC263D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		678B70E51E591ADD00BC263D /* iBooChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBooChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		678B70E51E591ADD00BC263D /* ImageFetcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageFetcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		678B70E91E591ADD00BC263D /* ImagesListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListInteractorTests.swift; sourceTree = "<group>"; };
 		678B70EB1E591ADD00BC263D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		678B70F01E591ADD00BC263D /* iBooChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBooChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		678B70F41E591ADD00BC263D /* iBooChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBooChallengeUITests.swift; sourceTree = "<group>"; };
+		678B70F01E591ADD00BC263D /* ImageFetcherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageFetcherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		678B70F41E591ADD00BC263D /* ImageFetcherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcherUITests.swift; sourceTree = "<group>"; };
 		678B70F61E591ADD00BC263D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		678B71041E591D5600BC263D /* ImagesListConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagesListConfigurator.swift; path = Scenes/Images/ImagesListConfigurator.swift; sourceTree = "<group>"; };
 		678B71051E591D5600BC263D /* ImagesListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagesListInteractor.swift; path = Scenes/Images/ImagesListInteractor.swift; sourceTree = "<group>"; };
@@ -95,12 +93,12 @@
 		67E57DA01E5E55CF00BB7A10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		67E57DA21E5E55D100BB7A10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		67E57DA41E5E609900BB7A10 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Layout.swift"; path = "Helpers/UIView+Layout.swift"; sourceTree = "<group>"; };
-		684E1AA51D4623B94ED1E197 /* Pods-iBooChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBooChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-iBooChallenge/Pods-iBooChallenge.release.xcconfig"; sourceTree = "<group>"; };
-		B6EBCDADD3E75EAF16423D12 /* Pods-iBooChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBooChallengeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iBooChallengeTests/Pods-iBooChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
-		B835AD7B6C8F805ED16180AD /* Pods-iBooChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBooChallengeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iBooChallengeUITests/Pods-iBooChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		BC8E045F81EE4CAF39219320 /* Pods_iBooChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iBooChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C093556677211397F50505B7 /* Pods-iBooChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBooChallengeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iBooChallengeTests/Pods-iBooChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
-		DE4476D4A94056EC6B4B5AED /* Pods-iBooChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBooChallengeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iBooChallengeUITests/Pods-iBooChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		684E1AA51D4623B94ED1E197 /* Pods-ImageFetcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageFetcher.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageFetcher/Pods-ImageFetcher.release.xcconfig"; sourceTree = "<group>"; };
+		B6EBCDADD3E75EAF16423D12 /* Pods-ImageFetcherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageFetcherTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImageFetcherTests/Pods-ImageFetcherTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B835AD7B6C8F805ED16180AD /* Pods-ImageFetcherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageFetcherUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImageFetcherUITests/Pods-ImageFetcherUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BC8E045F81EE4CAF39219320 /* Pods_ImageFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C093556677211397F50505B7 /* Pods-ImageFetcherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageFetcherTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageFetcherTests/Pods-ImageFetcherTests.release.xcconfig"; sourceTree = "<group>"; };
+		DE4476D4A94056EC6B4B5AED /* Pods-ImageFetcherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageFetcherUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageFetcherUITests/Pods-ImageFetcherUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B2F9C85588CD4763C637DC6 /* Pods_iBooChallenge.framework in Frameworks */,
+				1B2F9C85588CD4763C637DC6 /* Pods_ImageFetcher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CB94438DF6ED68B479F52D5 /* Pods_iBooChallengeTests.framework in Frameworks */,
+				7CB94438DF6ED68B479F52D5 /* Pods_ImageFetcherTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,7 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D16AD82AD246128630DDBBC1 /* Pods_iBooChallengeUITests.framework in Frameworks */,
+				D16AD82AD246128630DDBBC1 /* Pods_ImageFetcherUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,15 +135,15 @@
 				6768BC901E5BA37C00020BE9 /* imagesList.json */,
 			);
 			name = json;
-			path = ../iBooChallengeUITests;
+			path = ../ImageFetcherUITests;
 			sourceTree = "<group>";
 		};
 		678B70C81E591ADD00BC263D = {
 			isa = PBXGroup;
 			children = (
-				678B70D31E591ADD00BC263D /* iBooChallenge */,
-				678B70E81E591ADD00BC263D /* iBooChallengeTests */,
-				678B70F31E591ADD00BC263D /* iBooChallengeUITests */,
+				678B70D31E591ADD00BC263D /* ImageFetcher */,
+				678B70E81E591ADD00BC263D /* ImageFetcherTests */,
+				678B70F31E591ADD00BC263D /* ImageFetcherUITests */,
 				678B70D21E591ADD00BC263D /* Products */,
 				F9B5410309D0EE3FD5B84E38 /* Pods */,
 				A5B14B012A4545BAFE50EF9C /* Frameworks */,
@@ -155,30 +153,29 @@
 		678B70D21E591ADD00BC263D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				678B70D11E591ADD00BC263D /* iBooChallenge.app */,
-				678B70E51E591ADD00BC263D /* iBooChallengeTests.xctest */,
-				678B70F01E591ADD00BC263D /* iBooChallengeUITests.xctest */,
+				678B70D11E591ADD00BC263D /* ImageFetcher.app */,
+				678B70E51E591ADD00BC263D /* ImageFetcherTests.xctest */,
+				678B70F01E591ADD00BC263D /* ImageFetcherUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		678B70D31E591ADD00BC263D /* iBooChallenge */ = {
+		678B70D31E591ADD00BC263D /* ImageFetcher */ = {
 			isa = PBXGroup;
 			children = (
 				67E57DA31E5E608000BB7A10 /* Helpers */,
 				678B71021E591CFD00BC263D /* Scenes */,
 				678B70D41E591ADD00BC263D /* AppDelegate.swift */,
-				678B70D61E591ADD00BC263D /* ViewController.swift */,
 				678B70DB1E591ADD00BC263D /* Assets.xcassets */,
 				678B70DD1E591ADD00BC263D /* LaunchScreen.storyboard */,
 				678B70E01E591ADD00BC263D /* Info.plist */,
 				67E57D981E5E3D3E00BB7A10 /* apikey.plist */,
 				67E57DA11E5E55CF00BB7A10 /* Localizable.strings */,
 			);
-			path = iBooChallenge;
+			path = ImageFetcher;
 			sourceTree = "<group>";
 		};
-		678B70E81E591ADD00BC263D /* iBooChallengeTests */ = {
+		678B70E81E591ADD00BC263D /* ImageFetcherTests */ = {
 			isa = PBXGroup;
 			children = (
 				6768BC8F1E5BA35500020BE9 /* json */,
@@ -186,16 +183,16 @@
 				678B70E91E591ADD00BC263D /* ImagesListInteractorTests.swift */,
 				678B70EB1E591ADD00BC263D /* Info.plist */,
 			);
-			path = iBooChallengeTests;
+			path = ImageFetcherTests;
 			sourceTree = "<group>";
 		};
-		678B70F31E591ADD00BC263D /* iBooChallengeUITests */ = {
+		678B70F31E591ADD00BC263D /* ImageFetcherUITests */ = {
 			isa = PBXGroup;
 			children = (
-				678B70F41E591ADD00BC263D /* iBooChallengeUITests.swift */,
+				678B70F41E591ADD00BC263D /* ImageFetcherUITests.swift */,
 				678B70F61E591ADD00BC263D /* Info.plist */,
 			);
-			path = iBooChallengeUITests;
+			path = ImageFetcherUITests;
 			sourceTree = "<group>";
 		};
 		678B71021E591CFD00BC263D /* Scenes */ = {
@@ -264,9 +261,9 @@
 		A5B14B012A4545BAFE50EF9C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BC8E045F81EE4CAF39219320 /* Pods_iBooChallenge.framework */,
-				252B3341358A533BC20B938B /* Pods_iBooChallengeTests.framework */,
-				2FBA3DD256C8A12687C0005C /* Pods_iBooChallengeUITests.framework */,
+				BC8E045F81EE4CAF39219320 /* Pods_ImageFetcher.framework */,
+				252B3341358A533BC20B938B /* Pods_ImageFetcherTests.framework */,
+				2FBA3DD256C8A12687C0005C /* Pods_ImageFetcherUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -274,12 +271,12 @@
 		F9B5410309D0EE3FD5B84E38 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				33338585357F9A05E9EFA51B /* Pods-iBooChallenge.debug.xcconfig */,
-				684E1AA51D4623B94ED1E197 /* Pods-iBooChallenge.release.xcconfig */,
-				B6EBCDADD3E75EAF16423D12 /* Pods-iBooChallengeTests.debug.xcconfig */,
-				C093556677211397F50505B7 /* Pods-iBooChallengeTests.release.xcconfig */,
-				B835AD7B6C8F805ED16180AD /* Pods-iBooChallengeUITests.debug.xcconfig */,
-				DE4476D4A94056EC6B4B5AED /* Pods-iBooChallengeUITests.release.xcconfig */,
+				33338585357F9A05E9EFA51B /* Pods-ImageFetcher.debug.xcconfig */,
+				684E1AA51D4623B94ED1E197 /* Pods-ImageFetcher.release.xcconfig */,
+				B6EBCDADD3E75EAF16423D12 /* Pods-ImageFetcherTests.debug.xcconfig */,
+				C093556677211397F50505B7 /* Pods-ImageFetcherTests.release.xcconfig */,
+				B835AD7B6C8F805ED16180AD /* Pods-ImageFetcherUITests.debug.xcconfig */,
+				DE4476D4A94056EC6B4B5AED /* Pods-ImageFetcherUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -287,9 +284,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		678B70D01E591ADD00BC263D /* iBooChallenge */ = {
+		678B70D01E591ADD00BC263D /* ImageFetcher */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 678B70F91E591ADD00BC263D /* Build configuration list for PBXNativeTarget "iBooChallenge" */;
+			buildConfigurationList = 678B70F91E591ADD00BC263D /* Build configuration list for PBXNativeTarget "ImageFetcher" */;
 			buildPhases = (
 				A6EA5915C710946433ECD7FB /* [CP] Check Pods Manifest.lock */,
 				678B70CD1E591ADD00BC263D /* Sources */,
@@ -302,14 +299,14 @@
 			);
 			dependencies = (
 			);
-			name = iBooChallenge;
-			productName = iBooChallenge;
-			productReference = 678B70D11E591ADD00BC263D /* iBooChallenge.app */;
+			name = ImageFetcher;
+			productName = ImageFetcher;
+			productReference = 678B70D11E591ADD00BC263D /* ImageFetcher.app */;
 			productType = "com.apple.product-type.application";
 		};
-		678B70E41E591ADD00BC263D /* iBooChallengeTests */ = {
+		678B70E41E591ADD00BC263D /* ImageFetcherTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 678B70FC1E591ADD00BC263D /* Build configuration list for PBXNativeTarget "iBooChallengeTests" */;
+			buildConfigurationList = 678B70FC1E591ADD00BC263D /* Build configuration list for PBXNativeTarget "ImageFetcherTests" */;
 			buildPhases = (
 				D5D6F2265DD4C174C304E8D7 /* [CP] Check Pods Manifest.lock */,
 				678B70E11E591ADD00BC263D /* Sources */,
@@ -323,14 +320,14 @@
 			dependencies = (
 				678B70E71E591ADD00BC263D /* PBXTargetDependency */,
 			);
-			name = iBooChallengeTests;
-			productName = iBooChallengeTests;
-			productReference = 678B70E51E591ADD00BC263D /* iBooChallengeTests.xctest */;
+			name = ImageFetcherTests;
+			productName = ImageFetcherTests;
+			productReference = 678B70E51E591ADD00BC263D /* ImageFetcherTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		678B70EF1E591ADD00BC263D /* iBooChallengeUITests */ = {
+		678B70EF1E591ADD00BC263D /* ImageFetcherUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 678B70FF1E591ADD00BC263D /* Build configuration list for PBXNativeTarget "iBooChallengeUITests" */;
+			buildConfigurationList = 678B70FF1E591ADD00BC263D /* Build configuration list for PBXNativeTarget "ImageFetcherUITests" */;
 			buildPhases = (
 				8CB711DF6AFA319A30531691 /* [CP] Check Pods Manifest.lock */,
 				678B70EC1E591ADD00BC263D /* Sources */,
@@ -344,9 +341,9 @@
 			dependencies = (
 				678B70F21E591ADD00BC263D /* PBXTargetDependency */,
 			);
-			name = iBooChallengeUITests;
-			productName = iBooChallengeUITests;
-			productReference = 678B70F01E591ADD00BC263D /* iBooChallengeUITests.xctest */;
+			name = ImageFetcherUITests;
+			productName = ImageFetcherUITests;
+			productReference = 678B70F01E591ADD00BC263D /* ImageFetcherUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -378,7 +375,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 678B70CC1E591ADD00BC263D /* Build configuration list for PBXProject "iBooChallenge" */;
+			buildConfigurationList = 678B70CC1E591ADD00BC263D /* Build configuration list for PBXProject "ImageFetcher" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -391,9 +388,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				678B70D01E591ADD00BC263D /* iBooChallenge */,
-				678B70E41E591ADD00BC263D /* iBooChallengeTests */,
-				678B70EF1E591ADD00BC263D /* iBooChallengeUITests */,
+				678B70D01E591ADD00BC263D /* ImageFetcher */,
+				678B70E41E591ADD00BC263D /* ImageFetcherTests */,
+				678B70EF1E591ADD00BC263D /* ImageFetcherUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -441,7 +438,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iBooChallenge/Pods-iBooChallenge-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImageFetcher/Pods-ImageFetcher-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6F785788B8EB60769BB21E19 /* [CP] Copy Pods Resources */ = {
@@ -456,7 +453,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iBooChallengeUITests/Pods-iBooChallengeUITests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImageFetcherUITests/Pods-ImageFetcherUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		72EE35BF3F453BC065E7468F /* [CP] Embed Pods Frameworks */ = {
@@ -471,7 +468,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iBooChallenge/Pods-iBooChallenge-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImageFetcher/Pods-ImageFetcher-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8B3C1B6EC734DB33A4D82AFE /* [CP] Embed Pods Frameworks */ = {
@@ -486,7 +483,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iBooChallengeUITests/Pods-iBooChallengeUITests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImageFetcherUITests/Pods-ImageFetcherUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8CB711DF6AFA319A30531691 /* [CP] Check Pods Manifest.lock */ = {
@@ -516,7 +513,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iBooChallengeTests/Pods-iBooChallengeTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImageFetcherTests/Pods-ImageFetcherTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A6EA5915C710946433ECD7FB /* [CP] Check Pods Manifest.lock */ = {
@@ -561,7 +558,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iBooChallengeTests/Pods-iBooChallengeTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImageFetcherTests/Pods-ImageFetcherTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -575,7 +572,6 @@
 				678B710F1E591D5600BC263D /* ImagesListRouter.swift in Sources */,
 				678B711E1E591D7400BC263D /* ImageDetailRouter.swift in Sources */,
 				678B71201E591D7400BC263D /* ImageDetailWorker.swift in Sources */,
-				678B70D71E591ADD00BC263D /* ViewController.swift in Sources */,
 				678B711F1E591D7400BC263D /* ImageDetailViewController.swift in Sources */,
 				678B71101E591D5600BC263D /* ImagesListViewController.swift in Sources */,
 				67E57D9C1E5E46DA00BB7A10 /* ImageCollectionViewCell.swift in Sources */,
@@ -606,7 +602,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				678B70F51E591ADD00BC263D /* iBooChallengeUITests.swift in Sources */,
+				678B70F51E591ADD00BC263D /* ImageFetcherUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,12 +611,12 @@
 /* Begin PBXTargetDependency section */
 		678B70E71E591ADD00BC263D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 678B70D01E591ADD00BC263D /* iBooChallenge */;
+			target = 678B70D01E591ADD00BC263D /* ImageFetcher */;
 			targetProxy = 678B70E61E591ADD00BC263D /* PBXContainerItemProxy */;
 		};
 		678B70F21E591ADD00BC263D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 678B70D01E591ADD00BC263D /* iBooChallenge */;
+			target = 678B70D01E591ADD00BC263D /* ImageFetcher */;
 			targetProxy = 678B70F11E591ADD00BC263D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -741,13 +737,13 @@
 		};
 		678B70FA1E591ADD00BC263D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 33338585357F9A05E9EFA51B /* Pods-iBooChallenge.debug.xcconfig */;
+			baseConfigurationReference = 33338585357F9A05E9EFA51B /* Pods-ImageFetcher.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RW64Q5PN9H;
-				INFOPLIST_FILE = iBooChallenge/Info.plist;
+				INFOPLIST_FILE = ImageFetcher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ku.dai.iBooChallenge;
+				PRODUCT_BUNDLE_IDENTIFIER = ku.dai.ImageFetcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -755,13 +751,13 @@
 		};
 		678B70FB1E591ADD00BC263D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 684E1AA51D4623B94ED1E197 /* Pods-iBooChallenge.release.xcconfig */;
+			baseConfigurationReference = 684E1AA51D4623B94ED1E197 /* Pods-ImageFetcher.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RW64Q5PN9H;
-				INFOPLIST_FILE = iBooChallenge/Info.plist;
+				INFOPLIST_FILE = ImageFetcher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ku.dai.iBooChallenge;
+				PRODUCT_BUNDLE_IDENTIFIER = ku.dai.ImageFetcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -769,70 +765,70 @@
 		};
 		678B70FD1E591ADD00BC263D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B6EBCDADD3E75EAF16423D12 /* Pods-iBooChallengeTests.debug.xcconfig */;
+			baseConfigurationReference = B6EBCDADD3E75EAF16423D12 /* Pods-ImageFetcherTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = RW64Q5PN9H;
-				INFOPLIST_FILE = iBooChallengeTests/Info.plist;
+				INFOPLIST_FILE = ImageFetcherTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ku.dai.iBooChallengeTests;
+				PRODUCT_BUNDLE_IDENTIFIER = ku.dai.ImageFetcherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iBooChallenge.app/iBooChallenge";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImageFetcher.app/ImageFetcher";
 			};
 			name = Debug;
 		};
 		678B70FE1E591ADD00BC263D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C093556677211397F50505B7 /* Pods-iBooChallengeTests.release.xcconfig */;
+			baseConfigurationReference = C093556677211397F50505B7 /* Pods-ImageFetcherTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = RW64Q5PN9H;
-				INFOPLIST_FILE = iBooChallengeTests/Info.plist;
+				INFOPLIST_FILE = ImageFetcherTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ku.dai.iBooChallengeTests;
+				PRODUCT_BUNDLE_IDENTIFIER = ku.dai.ImageFetcherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iBooChallenge.app/iBooChallenge";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImageFetcher.app/ImageFetcher";
 			};
 			name = Release;
 		};
 		678B71001E591ADD00BC263D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B835AD7B6C8F805ED16180AD /* Pods-iBooChallengeUITests.debug.xcconfig */;
+			baseConfigurationReference = B835AD7B6C8F805ED16180AD /* Pods-ImageFetcherUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = RW64Q5PN9H;
-				INFOPLIST_FILE = iBooChallengeUITests/Info.plist;
+				INFOPLIST_FILE = ImageFetcherUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ku.dai.iBooChallengeUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = ku.dai.ImageFetcherUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = iBooChallenge;
+				TEST_TARGET_NAME = ImageFetcher;
 			};
 			name = Debug;
 		};
 		678B71011E591ADD00BC263D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DE4476D4A94056EC6B4B5AED /* Pods-iBooChallengeUITests.release.xcconfig */;
+			baseConfigurationReference = DE4476D4A94056EC6B4B5AED /* Pods-ImageFetcherUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = RW64Q5PN9H;
-				INFOPLIST_FILE = iBooChallengeUITests/Info.plist;
+				INFOPLIST_FILE = ImageFetcherUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ku.dai.iBooChallengeUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = ku.dai.ImageFetcherUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = iBooChallenge;
+				TEST_TARGET_NAME = ImageFetcher;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		678B70CC1E591ADD00BC263D /* Build configuration list for PBXProject "iBooChallenge" */ = {
+		678B70CC1E591ADD00BC263D /* Build configuration list for PBXProject "ImageFetcher" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				678B70F71E591ADD00BC263D /* Debug */,
@@ -841,7 +837,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		678B70F91E591ADD00BC263D /* Build configuration list for PBXNativeTarget "iBooChallenge" */ = {
+		678B70F91E591ADD00BC263D /* Build configuration list for PBXNativeTarget "ImageFetcher" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				678B70FA1E591ADD00BC263D /* Debug */,
@@ -850,7 +846,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		678B70FC1E591ADD00BC263D /* Build configuration list for PBXNativeTarget "iBooChallengeTests" */ = {
+		678B70FC1E591ADD00BC263D /* Build configuration list for PBXNativeTarget "ImageFetcherTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				678B70FD1E591ADD00BC263D /* Debug */,
@@ -859,7 +855,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		678B70FF1E591ADD00BC263D /* Build configuration list for PBXNativeTarget "iBooChallengeUITests" */ = {
+		678B70FF1E591ADD00BC263D /* Build configuration list for PBXNativeTarget "ImageFetcherUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				678B71001E591ADD00BC263D /* Debug */,
