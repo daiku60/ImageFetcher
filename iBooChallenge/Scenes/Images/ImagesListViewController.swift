@@ -73,6 +73,7 @@ class ImagesListViewController: UIViewController, ImagesListViewControllerInput 
             SpinnerCell.self,
             forCellWithReuseIdentifier: Constants.SpinnerCellIdentifer)
         
+        spinner.isHidden = false
         searchImagesOnLoad()
     }
     
@@ -83,18 +84,7 @@ class ImagesListViewController: UIViewController, ImagesListViewControllerInput 
         spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
   
-        collectionView.leadingAnchor
-            .constraint(equalTo: view.leadingAnchor)
-            .isActive = true
-        collectionView.topAnchor
-            .constraint(equalTo: view.topAnchor)
-            .isActive = true
-        collectionView.trailingAnchor
-            .constraint(equalTo: view.trailingAnchor)
-            .isActive = true
-        collectionView.bottomAnchor
-            .constraint(equalTo: view.bottomAnchor)
-            .isActive = true
+        collectionView.fillSuperview()
         
         spinner.isHidden = true
     }
@@ -104,11 +94,9 @@ class ImagesListViewController: UIViewController, ImagesListViewControllerInput 
     func searchImagesOnLoad() {
         // NOTE: Ask the Interactor to do some work
         let request = ImagesList.Search.Request(
-            searchTerm: "Barcelona City",
+            searchTerm: "City",
             currentPage: currentPage
         )
-        
-        spinner.isHidden = false
         output.searchImages(request: request)
     }
     
@@ -117,6 +105,7 @@ class ImagesListViewController: UIViewController, ImagesListViewControllerInput 
     func display(_ presentable: ImagesList.Search.Presentable) {
         // NOTE: Display the result from the Presenter
         spinner.isHidden = true
+        spinner.removeFromSuperview()
         
         switch presentable {
         case .success(let viewModel):
@@ -194,6 +183,11 @@ extension ImagesListViewController: UICollectionViewDelegateFlowLayout {
         }
         return CGSize(width: self.view.frame.size.width, height: 200)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let image = viewModel?.images[indexPath.item] else { return }
+        router.navigateToDetail(image: image)
+    }
 }
 
 extension ImagesListViewController: ImageCollectionViewCellDelegate {
@@ -203,5 +197,9 @@ extension ImagesListViewController: ImageCollectionViewCellDelegate {
         
         viewModel.images[indexPath.item].isFavourite = isOn
         self.viewModel = viewModel
+        
+        // ... Here it should send to the interactor a request 
+        // to update the fav in the user or elsewhere in the server. 
+        // That's out of the scope of this challenge
     }
 }

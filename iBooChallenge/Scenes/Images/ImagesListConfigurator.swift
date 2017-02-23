@@ -13,17 +13,11 @@ import UIKit
 
 // MARK: - Connect View, Interactor, and Presenter
 
-extension ImagesListViewController: ImagesListPresenterOutput {
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        router.passDataToNextScene(segue: segue)
-    }
-}
+extension ImagesListViewController: ImagesListPresenterOutput {}
 
-extension ImagesListInteractor: ImagesListViewControllerOutput {
-}
+extension ImagesListInteractor: ImagesListViewControllerOutput {}
 
-extension ImagesListPresenter: ImagesListInteractorOutput {
-}
+extension ImagesListPresenter: ImagesListInteractorOutput {}
 
 class ImagesListConfigurator {
     // MARK: - Object lifecycle

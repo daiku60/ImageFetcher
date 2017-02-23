@@ -1,0 +1,11 @@
+/* 
+  Localized.strings
+  iBooChallenge
+
+  Created by Jordi Serra i Font on 23/2/17.
+  Copyright © 2017 kudai. All rights reserved.
+*/
+
+"end_challenge_title" = "End of the challenge";
+
+"end_challenge_message" = "This page is not developed, but essentially it requires the same procedures and work as the previous page. I hope by now I already made a point about the structure, coding arrangement and testing of the different features. This would only add some repetitive tasks I consider not relevant for the outcome of the challenge";

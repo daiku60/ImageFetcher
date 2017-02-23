@@ -10,54 +10,143 @@
 //
 
 import UIKit
+import SDWebImage
 
-protocol ImageDetailViewControllerInput
-{
-  func displaySomething(viewModel: ImageDetail.Something.ViewModel)
+protocol ImageDetailViewControllerInput {
+    func displaySomething(viewModel: ImageDetail.Something.ViewModel)
 }
 
-protocol ImageDetailViewControllerOutput
-{
-  func doSomething(request: ImageDetail.Something.Request)
+protocol ImageDetailViewControllerOutput {
+    func doSomething(request: ImageDetail.Something.Request)
 }
 
-class ImageDetailViewController: UIViewController, ImageDetailViewControllerInput
-{
-  var output: ImageDetailViewControllerOutput!
-  var router: ImageDetailRouter!
-  
-  // MARK: - Object lifecycle
-  
-  override func awakeFromNib()
-  {
-    super.awakeFromNib()
-    ImageDetailConfigurator.sharedInstance.configure(viewController: self)
-  }
-  
-  // MARK: - View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    doSomethingOnLoad()
-  }
-  
-  // MARK: - Event handling
-  
-  func doSomethingOnLoad()
-  {
-    // NOTE: Ask the Interactor to do some work
+class ImageDetailViewController: UIViewController, ImageDetailViewControllerInput {
+    var output: ImageDetailViewControllerOutput!
+    var router: ImageDetailRouter!
     
-    let request = ImageDetail.Something.Request()
-    output.doSomething(request: request)
-  }
-  
-  // MARK: - Display logic
-  
-  func displaySomething(viewModel: ImageDetail.Something.ViewModel)
-  {
-    // NOTE: Display the result from the Presenter
+    let endChallengeTitleLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 20, weight: 2)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .white
+        return label
+    }()
     
-    // nameTextField.text = viewModel.name
-  }
+    let endChallengeLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let backgroundImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.alpha = 0
+        return imageView
+    }()
+    
+    let overlay: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        view.alpha = 0.2
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.alpha = 0
+        return view
+    }()
+    
+    let backgroundImageURL: String
+    
+    // MARK: - View lifecycle
+    
+    init(imageURL: String) {
+        self.backgroundImageURL = imageURL
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+        ImageDetailConfigurator.sharedInstance.configure(viewController: self)
+        doSomethingOnLoad()
+        layoutSubviews()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        guard let url = URL(string: backgroundImageURL) else { return }
+        endChallengeTitleLabel.alpha = 0
+        endChallengeLabel.alpha = 0
+        backgroundImage.sd_setImage(with: url) { (_, _, _, _) in
+            UIView.animate(withDuration: 0.4, animations: { [weak self] in
+                self?.backgroundImage.alpha = 1
+                self?.overlay.alpha = 0.3
+                self?.endChallengeTitleLabel.alpha = 1
+                self?.endChallengeLabel.alpha = 1
+            })
+        }
+    }
+    
+    func layoutSubviews() {
+        view.addSubview(backgroundImage)
+        view.addSubview(overlay)
+        view.addSubview(endChallengeLabel)
+        view.addSubview(endChallengeTitleLabel)
+        
+        backgroundImage.fillSuperview()
+        overlay.fillSuperview()
+        
+        endChallengeLabel.centerXAnchor
+            .constraint(equalTo: view.centerXAnchor)
+            .isActive = true
+        endChallengeLabel.centerYAnchor
+            .constraint(equalTo: view.centerYAnchor)
+            .isActive = true
+        endChallengeLabel.widthAnchor
+            .constraint(equalTo: view.widthAnchor, constant: -20)
+            .isActive = true
+        
+        endChallengeLabel.text = "end_challenge_message".localized
+        
+        endChallengeTitleLabel.centerXAnchor
+            .constraint(equalTo: view.centerXAnchor)
+            .isActive = true
+        endChallengeTitleLabel.bottomAnchor.constraint(equalTo: endChallengeLabel.topAnchor, constant: -20).isActive = true
+        
+        endChallengeTitleLabel.text = "end_challenge_title".localized
+    }
+    
+    // MARK: - Event handling
+    
+    func doSomethingOnLoad() {
+        // NOTE: Ask the Interactor to do some work
+        
+        let request = ImageDetail.Something.Request()
+        output.doSomething(request: request)
+    }
+    
+    // MARK: - Display logic
+    
+    func displaySomething(viewModel: ImageDetail.Something.ViewModel) {
+        // NOTE: Display the result from the Presenter
+        
+        // nameTextField.text = viewModel.name
+    }
+}
+
+extension String {
+    var localized: String {
+        return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "")
+    }
 }
